@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="cerazoExamen.Views.RegisterPage"
+             Title="Registro">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="20"
+            Spacing="15">
+            <Label x:Name="lblUser"
+                   Text=""
+                   FontAttributes="Bold"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="End" />
+            <Grid MaximumWidthRequest="300"
+                  Margin="0,0,0,20" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Text="Fecha"
+                       VerticalTextAlignment="Center"/>
+                <DatePicker x:Name="pckDate"
+                        MaximumWidthRequest="250"
+                        Format="dd/MM/yyyy"
+                        Margin="0,0,0,20"
+                        Grid.Row="0"
+                        Grid.Column="1"/>
+                <Label Text="Pais"
+                       VerticalTextAlignment="Center"
+                       Grid.Row="1"
+                       Grid.Column="0"/>
+                <Picker x:Name="pckCountry"
+                        Title="Selecione un Pais"
+                        MaximumWidthRequest="250"
+                        Grid.Row="1"
+                        Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Ecuador</x:String>
+                        <x:String>Peru</x:String>
+                        <x:String>Colombia</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Ciudad"
+                       VerticalTextAlignment="Center"
+                       Grid.Row="2"
+                       Grid.Column="0"/>
+                <Picker x:Name="pckCity"
+                        Title="Selecione una Ciudad"
+                        MaximumWidthRequest="250"
+                        Grid.Row="2"
+                        Grid.Column="1">
+                    <Picker.Items>
+                        <x:String>Quito</x:String>
+                        <x:String>Lima</x:String>
+                        <x:String>Bogota</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Text="Monto"
+                       VerticalTextAlignment="Center"
+                       Grid.Row="3"
+                       Grid.Column="0"/>
+                <Entry x:Name="txtAmount"
+                       Placeholder="0.0" 
+                       Keyboard="Numeric"
+                       Grid.Row="3"
+                       Grid.Column="1"/>
+                <Label Text="Pmensual"
+                       VerticalTextAlignment="Center"
+                       Grid.Row="4"
+                       Grid.Column="0"/>
+                <Entry x:Name="txtMonthAmount"
+                       Keyboard="Numeric"
+                       IsReadOnly="True"
+                       Placeholder="0.0"  
+                       Grid.Row="4"
+                       Grid.Column="1"/>
+            </Grid>
+            <Grid MaximumWidthRequest="300"
+                  Margin="0,0,0,50" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Label Text="Nombre"
+                       VerticalTextAlignment="Center"/>
+                <Entry x:Name="txtName"
+                        Placeholder="Nombre" 
+                        Grid.Row="1"
+                        Grid.Column="0"/>
+                <Label Text="Apellido"
+                       VerticalTextAlignment="Center"
+                       Grid.Row="0"
+                       Grid.Column="1"/>    
+                <Entry x:Name="txtLastname"
+                       Placeholder="Apellido" 
+                       Grid.Row="1"
+                       Grid.Column="1"/>
+                <Label Text="Edad"
+                       VerticalTextAlignment="Center"
+                       Grid.Row="0"
+                       Grid.Column="2"/>
+                <Entry x:Name="txtAge"
+                       Placeholder="Edad" 
+                       Grid.Row="1"
+                       Grid.Column="2"/>
+            </Grid>
+            <Grid MaximumWidthRequest="300"
+                  Margin="0,0,0,50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button x:Name="btnCalculate"
+                        Clicked="btnCalculate_Clicked"
+                        Text="Calcular P.Mensual" />
+                <Button x:Name="btnShowSummary"
+                        Text="Ver Resumen"
+                        Clicked="btnShowSummary_Clicked"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="20,0,0,0"/>
+            </Grid>
+        </VerticalStackLayout>
+
+    </ScrollView>
+</ContentPage>
