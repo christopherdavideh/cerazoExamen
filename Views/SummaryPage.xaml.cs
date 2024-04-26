@@ -18,6 +18,7 @@ public partial class SummaryPage : ContentPage
         string month = Preferences.Get("Month", string.Empty);
         string total = Preferences.Get("Total", string.Empty);
         InitializeComponent();
+        lblUser.Text = "Usuario conectado: " + username;
         lblName.Text = name;
         lblLastname.Text = lastname;
         lblAge.Text = age;
